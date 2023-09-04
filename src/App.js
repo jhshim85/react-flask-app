@@ -14,19 +14,26 @@ function App() {
       console.log(res.data.members);
       setMembers(res.data.members);
     });
-
   }, [])
 
   return (
-    <>
+    <ul>
       {
-        members.map((member) => {
+        members.map((member, index) => {
           return (
-            <p>{member}</p>
-          )
+            <li key={index}>
+              <p>Member{index + 1}</p>
+              <p>
+                name: {member.name.lastName}, {member.name.firstName}
+              </p>
+              <p>
+                age: {member.age}
+              </p>
+            </li>
+          );
         })
       }
-    </>
+    </ul>
   );
 }
 
