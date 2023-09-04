@@ -6,6 +6,14 @@ function App() {
   const [ members, setMembers ] = useState([]);
   
   useEffect(() => {
+    // fetch("/members")
+    //   .then( res => {
+    //     return res.json();
+    //     // console.log(res);
+    //   }).then(data => {
+    //     setMembers(data.members)
+    //     // console.log(data);
+    //   })
     axios({
       url: `/members`,
     }).then((res) => {
